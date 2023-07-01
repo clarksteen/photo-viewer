@@ -1,0 +1,8 @@
+name: photo-viewer
+channels:
+  - defaults
+dependencies:
+  - python>=3.11
+  - keyboard
+  - pillow
+  - pyinstaller
