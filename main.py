@@ -2,37 +2,7 @@
 
 A program to display and interact with pictures.
 
-Configuration
--------------
 
-  The program requires a settings file named "photo-viewer-settings.json" with 
-  the following values:
-
-  path: list of directories in which to find photos (recursively)
-  ignore_extensions: list of file extensions to ignore
-  delay_time: time in seconds to display each photo
-  hidden_directory: name of folder in which to hide photos
-  favorites: path of Favorites directory
-
-
-Installation
-------------
-
-  To compile to executable, use PYINSTALLER. For example, from the command line:
-
-  `python pyinstaller main.py -F --noconsole`
-
-  where -F compiles to a single file, and --noconsole allows the program to
-  remain open after the launching processes exits.
-
-  The program can be run as a screensaver (*.scr)
-
-  
-About
------
-
-  Author: Clark Steen
-  Started: December 2022
 '''
 
 import os, glob, shutil
