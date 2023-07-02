@@ -5,9 +5,9 @@ A program to display and interact with pictures.
 
 '''
 
-import os, glob, shutil
+import os, glob, shutil, sys
 from time import sleep
-import keyboard
+import argparse
 import tkinter
 from tkinter import ttk
 from PIL import Image, ImageTk, ImageOps
@@ -228,7 +228,7 @@ class Viewer():
 
         current_file = self.files[self.index]
 
-        # Create new directory if necessary.
+        # Create new directory if necessary.r
         if not os.path.exists(self.favorites_dir):
             os.mkdir(self.favotites_dir)
 
@@ -248,6 +248,13 @@ class Viewer():
 
 
 if __name__ == '__main__':
+
+    # Parse args
+    parser = argparse.ArgumentParser()
+    parser.add_argument("input")
+    args = parser.parse_args()
+    if args.input != "/s":
+        sys.exit()
 
     # Read settings file.
     with open("photo-viewer-settings.json") as f:

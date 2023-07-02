@@ -36,7 +36,7 @@ For example:
 To compile to executable, use `pyinstaller`. For example, from the command line:
 
 ```bash
-python pyinstaller main.py -F --noconsole
+pyinstaller main.py -F --noconsole
 ```
 
 where `-F` compiles to a single file, and `--noconsole` allows the program to

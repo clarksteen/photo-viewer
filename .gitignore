@@ -1,6 +1,9 @@
 __pycache__
 build
-dist
 scratchpad.ipynb
 main.spec
 scratchpad.ipynb
+/photo-viewer-settings.json
+/dist/photo-viewer-settings.json
+photo-viewer.spec
+.vscode/launch.json
