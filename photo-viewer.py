@@ -236,7 +236,7 @@ class Viewer():
 
 
     def open_photo(self):
-        '''Open directory of current photo and exit program. '''
+        '''Open current photo and exit program. '''
 
         current_file = self.files[self.index]
         current_dir = os.path.dirname(current_file)
@@ -244,7 +244,8 @@ class Viewer():
         # os.startfile(current_dir)
         os.startfile(current_file)
 
-        self.canvasas.destroy()
+        sleep(1)
+        self.root.destroy()
 
 
 

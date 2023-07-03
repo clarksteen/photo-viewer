@@ -8,3 +8,4 @@ scratchpad.ipynb
 photo-viewer.spec
 .vscode/launch.json
 dist/photo-viewer.scr
+build.ps1

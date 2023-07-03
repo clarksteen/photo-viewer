@@ -1,9 +1,26 @@
 # photo-viewer
 
-View photos during screen idle time.
+Screensaver to view photos, with some additional features.
 
 
-## Configuration
+# Features
+
+The following commands can be used:
+
+Exit screensaver: `Esc`
+
+Open photo: `o`
+
+Hide photo from slideshow: `Del`
+
+Copy photo to a favorites folder: `f`
+
+Next/previous photo: `Right/Left`
+
+Rotate: `Up`
+
+
+# Configuration
 
 The program requires a settings file named `photo-viewer-settings.json` with 
 the following values:
@@ -31,20 +48,25 @@ For example:
 ```
 
 
-## Installation
+# Installation
 
 To compile to executable, use `pyinstaller`. For example, from the command line:
 
-```bash
-pyinstaller main.py -F --noconsole
+```powershell
+pyinstaller main.py -F -w
 ```
 
-where `-F` compiles to a single file, and `--noconsole` allows the program to
-remain open after the launching processes exits.
+where `-F` compiles to a single file, and `-w` hides the console.
 
+Next, rename the executable as `*.scr` so that it can be run as screensaver. For example:
+
+```powershell
+Move-Item .\dist\photo-viewer.exe .\dist\photo-viewer.scr -Force
+Copy-Item ".\photo-viewer-settings.json" ".\dist\photo-viewer-settings.json" -Force
+Copy-Item .\dist\* C:\Windows\System32\ -Force
+```
 
 # To do
-* Add arguments so that the program can be run as a screensaver (*.scr)
 
 
 # About
