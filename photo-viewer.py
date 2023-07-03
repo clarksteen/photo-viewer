@@ -74,7 +74,7 @@ class Viewer():
         self.index = -1
         self.files = files
         self.root = self.get_root()
-        self.canv = self.get_canvas()
+        self.canvas = self.get_canvas()
         self.photo = photo
         self.hidden_dir = "Hide"
         self.favorites_dir = None
@@ -136,8 +136,8 @@ class Viewer():
 
         # Add image to canvas. Position the center of the image in the center of
         # the canvas.
-        #self.canv.delete("all")
-        self.canv.create_image(self.scr_width/2, self.scr_height/2, 
+        #self.canvas.delete("all")
+        self.canvas.create_image(self.scr_width/2, self.scr_height/2, 
                                image=self.image)
         
         
@@ -198,8 +198,8 @@ class Viewer():
         # each call to NEXT (left or right arrows) creates a cascade of 
         # automatic triggers.
         if self.trigger is not None:
-            self.canv.after_cancel(self.trigger)
-        self.trigger = self.canv.after(self.timer*1000, self.next)
+            self.canvas.after_cancel(self.trigger)
+        self.trigger = self.canvas.after(self.timer*1000, self.next)
         
     
     def hide_photo(self):
@@ -241,9 +241,10 @@ class Viewer():
         current_file = self.files[self.index]
         current_dir = os.path.dirname(current_file)
 
-        os.startfile(current_dir)
+        # os.startfile(current_dir)
+        os.startfile(current_file)
 
-        self.root.destroy()
+        self.canvasas.destroy()
 
 
 
@@ -253,8 +254,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("input")
     args = parser.parse_args()
-    if args.input != "/s":
-        sys.exit()
+    # if args.input != "/s":
+    #     sys.exit()
 
     # Read settings file.
     with open("photo-viewer-settings.json") as f:
